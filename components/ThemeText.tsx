@@ -15,7 +15,7 @@ const ThemeText = ({ children, variant = 'h1', colorFormula = false, ...rest }: 
     ? (children as string).split(/([x+÷-])/).map((part, i) => (
         <Text 
           key={ i }
-          style={{ color: operators.includes( part ) ? Colors.cherry : Colors.textPrimary }}
+          style={{ color: operators.includes( part ) ? Colors.pink : Colors.textPrimary }}
         >
           { part }
         </Text>

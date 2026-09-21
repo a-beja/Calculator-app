@@ -38,7 +38,7 @@ export const globalStyles = StyleSheet.create({
     },
 
     subResult: {
-        color: Colors.textSecondary,
+        color: Colors.blueberry,
         fontFamily: Fonts.fontFamily,
         fontVariant: ['common-ligatures'],
         fontSize: Fonts.fontSize.normal,
