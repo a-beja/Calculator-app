@@ -37,6 +37,8 @@ export const useCalculator = () => {
 
     const buildFormula = ( newDigit: string ) => {
         let lastNumber = getLastNumber();
+
+        if( formula === '0' && ['x', '÷'].includes( newDigit ) ) return;
         
         // To delete the first 0 when a new digit (not 0) is added, to have lastNumber = 5 instead = 05
         if( lastNumber === '0' && newDigit !== '.'){
@@ -62,6 +64,7 @@ export const useCalculator = () => {
             setFormula( formula.slice(0, -1) + newDigit );
             return;
         }
+    
         
         setFormula( formula + newDigit );
     }
@@ -95,6 +98,7 @@ export const useCalculator = () => {
         setFormula( result.toString() );
         setResult(0);
     }
+
 
     return {
         formula,
