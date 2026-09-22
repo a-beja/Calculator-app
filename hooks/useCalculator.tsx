@@ -8,6 +8,8 @@ export const useCalculator = () => {
     const [formula, setFormula] = useState('0');
     const [result, setResult] = useState(0);
 
+    const operators = ['+', '-', 'x', '÷'];
+
     
     useEffect(() => {
         if( formula !== '0' ){
@@ -56,6 +58,11 @@ export const useCalculator = () => {
 
         // To avoid lastNumber = 0000 when it's not 0.000
         if( lastNumber === '0' && newDigit === '0') return;
+
+        if( operators.includes( newDigit ) && operators.some( op => formula.endsWith(op)) ){
+            setFormula( formula.slice(0, -1) + newDigit );
+            return;
+        }
         
         setFormula( formula + newDigit );
     }
