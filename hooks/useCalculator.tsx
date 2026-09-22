@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
-
+import { CALCULATOR_OPERATORS, OPERATOR_REGEX } from "@/constants/calculator";
 import { evaluate } from 'mathjs';
+import { useEffect, useState } from "react";
 
 
 export const useCalculator = () => {
 
     const [formula, setFormula] = useState('0');
     const [result, setResult] = useState(0);
-
-    const operators = ['+', '-', 'x', '÷'];
 
     
     useEffect(() => {
@@ -20,12 +18,13 @@ export const useCalculator = () => {
 
     const getLastNumber = (): string => {
         // Separate each number (splited by operators) to get the last one
-        const parts = formula.split(/[+\-x÷]/);
+        const parts = formula.split(OPERATOR_REGEX);
         return parts[ parts.length - 1 ];
     }
 
     const clean = () => {
         setFormula('0');
+        setResult(0);
     }
 
     const deleteLast = () => {
@@ -59,7 +58,7 @@ export const useCalculator = () => {
         // To avoid lastNumber = 0000 when it's not 0.000
         if( lastNumber === '0' && newDigit === '0') return;
 
-        if( operators.includes( newDigit ) && operators.some( op => formula.endsWith(op)) ){
+        if( CALCULATOR_OPERATORS.includes( newDigit ) && CALCULATOR_OPERATORS.some( op => formula.endsWith(op)) ){
             setFormula( formula.slice(0, -1) + newDigit );
             return;
         }
@@ -68,11 +67,18 @@ export const useCalculator = () => {
     }
 
     const calculateResult = () => {
-        const operators = ['+', '-', 'x', '÷'];
+
+        const parts = formula.split(OPERATOR_REGEX);
+        const nonEmptyParts = parts.filter(part => part !== '').length;
+
+        if( nonEmptyParts < 2 ){
+            setResult(0);
+            return;
+        }
 
         let expr = formula;
         
-        if( operators.some(op => expr.endsWith(op)) ){
+        if( CALCULATOR_OPERATORS.some(op => expr.endsWith(op)) ){
             expr = expr.slice(0, -1);
         }
 
@@ -85,6 +91,11 @@ export const useCalculator = () => {
         setResult( resFixed );
     }
 
+    const newStart = () => {
+        setFormula( result.toString() );
+        setResult(0);
+    }
+
     return {
         formula,
         result,
@@ -92,6 +103,7 @@ export const useCalculator = () => {
         buildFormula,
         clean,
         deleteLast,
-        calculateResult
+        calculateResult,
+        newStart,
     }
 }

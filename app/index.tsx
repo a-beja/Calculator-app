@@ -14,6 +14,7 @@ const CalculatorApp = () => {
     clean,
     deleteLast,
     calculateResult,
+    newStart,
   } = useCalculator();
 
   return (
@@ -79,7 +80,7 @@ const CalculatorApp = () => {
           <CalculatorButton 
             label='=' 
             color ='cherry' 
-            onPress={() => calculateResult() }
+            onPress={() => newStart() }
             />
         </View>
       </View>
