@@ -38,7 +38,9 @@ export const useCalculator = () => {
     const buildFormula = ( newDigit: string ) => {
         let lastNumber = getLastNumber();
 
-        if( formula === '0' && ['x', '÷'].includes( newDigit ) ) return;
+        // To avoid formula = operator ( except for "-")
+        if( formula === '0' && ['x', '÷', '+'].includes( newDigit ) ) return;
+        if( lastNumber === '' && ['x', '÷', '+'].includes( newDigit ) ) return;
         
         // To delete the first 0 when a new digit (not 0) is added, to have lastNumber = 5 instead = 05
         if( lastNumber === '0' && newDigit !== '.'){
@@ -71,6 +73,12 @@ export const useCalculator = () => {
 
     const calculateResult = () => {
 
+        if( formula.includes('÷0')){
+            setResult(0);
+            return;
+        }
+
+        // To get the qty of the numeric values
         const parts = formula.split(OPERATOR_REGEX);
         const nonEmptyParts = parts.filter(part => part !== '').length;
 
