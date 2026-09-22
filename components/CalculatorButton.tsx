@@ -35,7 +35,7 @@ const CalculatorButton = ({
         ...globalStyles.button,
         backgroundColor: colorStyles[color],
         opacity: pressed ? 0.5 : 1,
-        width: doubleSize ? 180 : 80,
+        width: doubleSize ? 170 : 80,
       })}
       onPress={ () => {
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)

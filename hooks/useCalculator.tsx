@@ -62,6 +62,7 @@ export const useCalculator = () => {
         // To avoid lastNumber = 0000 when it's not 0.000
         if( lastNumber === '0' && newDigit === '0') return;
 
+        // To replace the last sign for the new one instead of adding it to the formula
         if( CALCULATOR_OPERATORS.includes( newDigit ) && CALCULATOR_OPERATORS.some( op => formula.endsWith(op)) ){
             setFormula( formula.slice(0, -1) + newDigit );
             return;
@@ -72,11 +73,6 @@ export const useCalculator = () => {
     }
 
     const calculateResult = () => {
-
-        if( formula.includes('÷0')){
-            setResult(0);
-            return;
-        }
 
         // To get the qty of the numeric values
         const parts = formula.split(OPERATOR_REGEX);
