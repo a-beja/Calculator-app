@@ -1,7 +1,3 @@
-# 🚀 Calculator app.
-
-<br>
-
 ## ✨ Features
 
 - Layout and Index
@@ -24,3 +20,4 @@
 <br>
 
 ## 📸 Screenshots
+<img width="334" height="728" alt="imagen" src="https://github.com/user-attachments/assets/7b4399bf-c1f4-4207-b38a-de4d3d865c6d" />
