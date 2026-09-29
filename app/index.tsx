@@ -79,7 +79,7 @@ const CalculatorApp = () => {
 
           <CalculatorButton 
             label='=' 
-            color ='lime'
+            color ='blueberry'
             onPress={() => newStart() }
             />
         </View>

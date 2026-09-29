@@ -8,7 +8,7 @@ import * as Haptics from 'expo-haptics';
 
 interface Props {
     label: string;
-    color?: 'lightGray' | 'darkGray' | 'cherry' | 'lime';
+    color?: 'lightGray' | 'darkGray' | 'cherry' | 'lime' | 'blueberry';
     blackText?: boolean;
     doubleSize?: boolean;
     onPress: () => void;
@@ -28,6 +28,7 @@ const CalculatorButton = ({
     darkGray: Colors.darkGray,
     cherry: Colors.cherry,
     lime: Colors.lime,
+    blueberry: Colors.blueberry
   }
 
   return (
