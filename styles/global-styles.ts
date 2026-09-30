@@ -24,10 +24,6 @@ export const globalStyles = StyleSheet.create({
         paddingHorizontal: 20,
     },
 
-    normalText: {
-        color: Colors.textNormal,
-    },
-
     mainResult: {
         color: Colors.textPrimary,
         fontFamily: Fonts.fontFamily,
@@ -38,7 +34,7 @@ export const globalStyles = StyleSheet.create({
     },
 
     subResult: {
-        color: Colors.blueberry,
+        color: Colors.textSecondary,
         fontFamily: Fonts.fontFamily,
         fontVariant: ['common-ligatures'],
         fontSize: Fonts.fontSize.normal,

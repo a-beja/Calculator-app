@@ -8,7 +8,7 @@ import * as Haptics from 'expo-haptics';
 
 interface Props {
     label: string;
-    color?: 'lightGray' | 'darkGray' | 'cherry' | 'lime' | 'blueberry';
+    color?: 'lightGray' | 'darkGray' | 'cherry' | 'blueberry';
     blackText?: boolean;
     doubleSize?: boolean;
     onPress: () => void;
