@@ -27,7 +27,6 @@ const CalculatorButton = ({
     lightGray: Colors.lightGray,
     darkGray: Colors.darkGray,
     cherry: Colors.cherry,
-    lime: Colors.lime,
     blueberry: Colors.blueberry
   }
 
