@@ -1,3 +1,4 @@
+import { CALCULATOR_OPERATORS } from '@/constants/calculator';
 import { Colors } from '@/constants/theme';
 import { globalStyles } from '@/styles/global-styles';
 import { Text, type TextProps } from 'react-native';
@@ -9,7 +10,7 @@ interface Props extends TextProps {
 
 const ThemeText = ({ children = '', variant = 'h1', ...rest }: Props) => {
   
-  const operators: string[] = ['+', '-', 'x', '÷'];
+  const operators: string[] = CALCULATOR_OPERATORS;
   const formParts: string[] = children.split(/([x+÷-])/);
   
   const content = variant === 'h1' ?
