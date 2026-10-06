@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export const useCalculator = () => {
 
     const [formula, setFormula] = useState('0');
-    const [result, setResult] = useState(0);
+    const [result, setResult] = useState('0');
 
     
     useEffect(() => {
@@ -24,7 +24,7 @@ export const useCalculator = () => {
 
     const clean = () => {
         setFormula('0');
-        setResult(0);
+        setResult('0');
     }
 
     const deleteLast = () => {
@@ -79,7 +79,7 @@ export const useCalculator = () => {
         const nonEmptyParts = parts.filter(part => part !== '').length;
 
         if( nonEmptyParts < 2 ){
-            setResult(0);
+            setResult('0');
             return;
         }
 
@@ -95,12 +95,12 @@ export const useCalculator = () => {
         
         const res = evaluate(expression);
         const resFixed = parseFloat(res.toFixed(5));
-        setResult( resFixed );
+        setResult( resFixed.toString() );
     }
 
     const newStart = () => {
         setFormula( result.toString() );
-        setResult(0);
+        setResult('0');
     }
 
 

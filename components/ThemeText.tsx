@@ -5,14 +5,15 @@ import { Text, type TextProps } from 'react-native';
 interface Props extends TextProps {
     variant?: 'h1' | 'h2';
     colorFormula?: boolean;
+    children?: string;
 }
 
-const ThemeText = ({ children, variant = 'h1', colorFormula = false, ...rest }: Props) => {
+const ThemeText = ({ children = '', variant = 'h1', colorFormula = false, ...rest }: Props) => {
   
   const operators = ['+', '-', 'x', '÷'];
   
   const content = colorFormula
-    ? (children as string).split(/([x+÷-])/).map((part, i) => (
+    ? children.split(/([x+÷-])/).map((part, i) => (
         <Text 
           key={ i }
           style={{ color: operators.includes( part ) ? Colors.operators : Colors.textPrimary }}
