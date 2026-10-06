@@ -4,24 +4,25 @@ import { Text, type TextProps } from 'react-native';
 
 interface Props extends TextProps {
     variant?: 'h1' | 'h2';
-    colorFormula?: boolean;
-    children?: string;
+    children: string;
 }
 
-const ThemeText = ({ children = '', variant = 'h1', colorFormula = false, ...rest }: Props) => {
+const ThemeText = ({ children = '', variant = 'h1', ...rest }: Props) => {
   
-  const operators = ['+', '-', 'x', '÷'];
+  const operators: string[] = ['+', '-', 'x', '÷'];
+  const formParts: string[] = children.split(/([x+÷-])/);
   
-  const content = colorFormula
-    ? children.split(/([x+÷-])/).map((part, i) => (
-        <Text 
-          key={ i }
-          style={{ color: operators.includes( part ) ? Colors.operators : Colors.textPrimary }}
-        >
-          { part }
-        </Text>
-      ))
+  const content = variant === 'h1' ?
+    formParts.map((part, i) => (
+      <Text 
+        key={ i }
+        style={{ color: operators.includes( part ) ? Colors.operators : '' }}
+      >
+        { part }
+      </Text>
+    )) 
     : children;
+
 
   return (
     <Text 
@@ -33,7 +34,7 @@ const ThemeText = ({ children = '', variant = 'h1', colorFormula = false, ...res
         adjustsFontSizeToFit
         { ...rest }
     >
-        { content }
+      { content }
     </Text>
   )
 }
