@@ -110,7 +110,6 @@ export const useCalculator = () => {
         buildFormula,
         clean,
         deleteLast,
-        calculateResult,
         newStart,
     }
 }

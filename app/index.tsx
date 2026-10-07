@@ -13,7 +13,6 @@ const CalculatorApp = () => {
     buildFormula,
     clean,
     deleteLast,
-    calculateResult,
     newStart,
   } = useCalculator();
 
@@ -82,7 +81,7 @@ const CalculatorApp = () => {
             color ='blueberry'
             blackText={true}
             onPress={() => newStart() }
-            />
+          />
         </View>
       </View>
 
