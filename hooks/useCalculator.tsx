@@ -40,7 +40,6 @@ export const useCalculator = () => {
 
         // To avoid formula = operator ( except for "-")
         if( formula === '0' && ['x', '÷', '+'].includes( newDigit ) ) return;
-        if( lastNumber === '' && ['x', '÷', '+'].includes( newDigit ) ) return;
         
         // To delete the first 0 when a new digit (not 0) is added, to have lastNumber = 5 instead = 05
         if( lastNumber === '0' && newDigit !== '.'){
