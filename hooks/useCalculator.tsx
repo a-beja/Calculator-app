@@ -73,9 +73,9 @@ export const useCalculator = () => {
 
         // To get the qty of the numeric values
         const parts = formula.split(OPERATOR_REGEX);
-        const nonEmptyParts = parts.filter(part => part !== '').length;
+        const nonEmptyParts = parts.filter( part => part !== '' ).length;
 
-        if( nonEmptyParts < 2 ){
+        if( nonEmptyParts === 1 ){
             setResult('0');
             return;
         }
