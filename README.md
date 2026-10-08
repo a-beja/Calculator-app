@@ -9,15 +9,21 @@
 - Text: numberOfLines, adjustsFontSizeToFit
 - Interfaces que se extienden  (TextProps)
 - ...rest
-- 
 
 <br>
 
 ## 🛠️ Tech Stack
 
 - **Haptics:** expo-haptics
+- **Math:** mathjs
+
+<br>
+
+## 📑 Documentation
+https://github.com/a-beja/Calculator-app/blob/main/CalculatorApp.pdf
 
 <br>
 
 ## 📸 Screenshots
-<img width="334" height="728" alt="imagen" src="https://github.com/user-attachments/assets/7b4399bf-c1f4-4207-b38a-de4d3d865c6d" />
+<img width="351" height="761" alt="imagen" src="https://github.com/user-attachments/assets/29913bfd-6856-4b85-9ae7-fff100f59ce4" />
+
