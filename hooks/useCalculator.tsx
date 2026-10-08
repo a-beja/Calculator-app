@@ -40,6 +40,7 @@ export const useCalculator = () => {
 
         // To avoid formula = operator ( except for "-")
         if( formula === '0' && ['x', '÷', '+'].includes( newDigit ) ) return;
+        if( formula === '-' && ['x', '÷', '+'].includes( newDigit ) ) return;
         
         // To delete the first 0 when a new digit (not 0) is added, to have lastNumber = 5 instead = 05
         if( lastNumber === '0' && newDigit !== '.'){
@@ -53,16 +54,13 @@ export const useCalculator = () => {
         }
 
         // To avoid having more than one period
-        if( lastNumber.includes('.') && newDigit === '.' ){
-            console.log('hola, ya tengo un punto y quiero poner otro');
-            return;
-        }
+        if( lastNumber.includes('.') && newDigit === '.' ) return;
 
         // To avoid lastNumber = 0000 when it's not 0.000
         if( lastNumber === '0' && newDigit === '0') return;
 
         // To replace the last sign for the new one instead of adding it to the formula
-        if( CALCULATOR_OPERATORS.includes( newDigit ) && CALCULATOR_OPERATORS.some( op => formula.endsWith(op)) ){
+        if( CALCULATOR_OPERATORS.includes(formula.slice(-1)) && CALCULATOR_OPERATORS.includes( newDigit ) ){
             setFormula( formula.slice(0, -1) + newDigit );
             return;
         }
