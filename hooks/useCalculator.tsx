@@ -82,7 +82,7 @@ export const useCalculator = () => {
 
         let expr = formula;
         
-        if( CALCULATOR_OPERATORS.some(op => expr.endsWith(op)) ){
+        if( CALCULATOR_OPERATORS.includes( formula.slice(-1)) ){
             expr = expr.slice(0, -1);
         }
 
