@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import { Slot } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
+import ShakeModal from '@/components/ShakeModal';
 import { globalStyles } from '@/styles/global-styles';
 
 const RootLayout = () => {
@@ -20,6 +21,9 @@ const RootLayout = () => {
     // Se usó flex: 1 para rellenar todo el background color.
     <View style={ globalStyles.background }>
       <Slot />
+
+
+      <ShakeModal />
 
       <StatusBar style="light" />
     </View>
