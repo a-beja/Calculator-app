@@ -105,7 +105,7 @@ export const globalStyles = StyleSheet.create({
     },
 
     buttonModal: {
-        backgroundColor: '#e8a108',
+        backgroundColor: Colors.cherry,
         borderRadius: 8,
         paddingVertical: 10,
         alignItems: 'center',
@@ -120,5 +120,5 @@ export const globalStyles = StyleSheet.create({
         fontSize: 14,
         fontWeight: '500',
     },
-    
+
 });
