@@ -41,10 +41,11 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   card: {
-    width: '100%',
+    width: '80%',
+    maxWidth: 320,
     backgroundColor: '#ffffff',
     borderRadius: 12,
-    padding: 24,
+    padding: 16,
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: '#e5e7eb',
     shadowColor: '#000',
@@ -54,21 +55,21 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   title: {
-    fontSize: 20,
+    fontSize: 17,
     fontWeight: '600',
     color: '#111827',
-    marginBottom: 8,
+    marginBottom: 6,
   },
   body: {
-    fontSize: 15,
-    lineHeight: 22,
+    fontSize: 13,
+    lineHeight: 19,
     color: '#6b7280',
-    marginBottom: 24,
+    marginBottom: 16,
   },
   button: {
     backgroundColor: '#e8a108',
     borderRadius: 8,
-    paddingVertical: 14,
+    paddingVertical: 10,
     alignItems: 'center',
   },
   buttonPressed: {
@@ -76,7 +77,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#000000',
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: '500',
   },
 });
