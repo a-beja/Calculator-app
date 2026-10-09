@@ -18,7 +18,7 @@ const ShakeModal = () => {
           <Text style={globalStyles.title}>Hi! 🍓</Text>
 
           <Text style={globalStyles.body}>
-            {`This is my very first mobile app. Huge shout-out to my friends Eyixi and Alex for their support :)\n\n- Abril`}
+            {`This is my very first mobile app. Huge shout-out to my friends Eyixi and Alex for their support :)\n\n- Abril. Oct'26`}
           </Text>
 
           <Pressable
