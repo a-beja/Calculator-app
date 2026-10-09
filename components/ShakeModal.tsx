@@ -25,7 +25,7 @@ const ShakeModal = () => {
             style={({ pressed }) => [globalStyles.buttonModal, pressed && globalStyles.buttonModalPressed]}
             onPress={close}
           >
-            <Text style={globalStyles.buttonModalText}>Aceptar</Text>
+            <Text style={globalStyles.buttonModalText}>Close</Text>
           </Pressable>
         </View>
       </View>

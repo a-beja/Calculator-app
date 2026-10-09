@@ -116,7 +116,7 @@ export const globalStyles = StyleSheet.create({
     },
 
     buttonModalText: {
-        color: '#000000',
+        color: 'white',
         fontSize: 14,
         fontWeight: '500',
     },
