@@ -65,5 +65,60 @@ export const globalStyles = StyleSheet.create({
         fontFamily: Fonts.fontFamily,
         fontVariant: ['common-ligatures'],
         fontWeight: 300
-    }
+    },
+
+    overlay: {
+        flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.6)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 24,
+    },
+
+    card: {
+        width: '80%',
+        maxWidth: 320,
+        backgroundColor: '#ffffff',
+        borderRadius: 12,
+        padding: 16,
+        borderWidth: StyleSheet.hairlineWidth,
+        borderColor: '#e5e7eb',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.12,
+        shadowRadius: 12,
+        elevation: 6,
+    },
+
+    title: {
+        fontSize: 17,
+        fontWeight: '600',
+        color: '#111827',
+        marginBottom: 6,
+    },
+
+    body: {
+        fontSize: 13,
+        lineHeight: 19,
+        color: '#6b7280',
+        marginBottom: 16,
+    },
+
+    buttonModal: {
+        backgroundColor: '#e8a108',
+        borderRadius: 8,
+        paddingVertical: 10,
+        alignItems: 'center',
+    },
+
+    buttonModalPressed: {
+        opacity: 0.85,
+    },
+
+    buttonModalText: {
+        color: '#000000',
+        fontSize: 14,
+        fontWeight: '500',
+    },
+    
 });
